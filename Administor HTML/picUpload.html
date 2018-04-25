@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>图片管理系统</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />    
+    
+    <link href="./css/bootstrap.min.css" rel="stylesheet" />
+    <link href="./css/bootstrap-responsive.min.css" rel="stylesheet" />
+    
+    
+    <link href="./css/font-awesome.css" rel="stylesheet" />
+    
+    <link href="./css/adminia.css" rel="stylesheet" /> 
+    <link href="./css/adminia-responsive.css" rel="stylesheet" /> 
+    
+    <link href="./css/pages/dashboard.css" rel="stylesheet" /> 
+    
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+	
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+
+<body>
+	
+<div class="navbar navbar-fixed-top">
+	
+	<div class="navbar-inner">
+		
+		<div class="container">
+			
+			<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> 
+				<span class="icon-bar"></span> 
+				<span class="icon-bar"></span> 
+				<span class="icon-bar"></span> 				
+			</a>
+			
+			<a class="brand" href="./">图片管理系统</a>
+			
+			<div class="nav-collapse">
+			
+				<ul class="nav pull-right">
+					<li class="divider-vertical"></li>
+					<li class="dropdown">
+						
+						<a data-toggle="dropdown" class="dropdown-toggle " href="#">
+							菜单 <b class="caret"></b>							
+						</a>
+						
+						<ul class="dropdown-menu">
+							<li>
+								<a href="./index.html"><i class="icon-pushpin"></i>标签管理	</a>
+					        </li>
+							<li>
+								<a href="./picUpload.html"><i class="icon-th-large"></i> 图片管理</a>
+							</li>
+							<li>
+								<a href="./usermanage.html"><i class="icon-user"></i> 用户管理 </a>
+							</li>
+							<li>
+								<a href="./exceptionmanage.html"><i class="icon-th-list"></i>异常管理</a>
+							</li>
+
+							<li class="divider"></li>
+							<li>
+								<a href="./login.html"><i class="icon-off"></i>退出登录</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				
+			</div> <!-- /nav-collapse -->
+			
+		</div> <!-- /container -->
+		
+	</div> <!-- /navbar-inner -->
+	
+</div> <!-- /navbar -->
+
+<div id="content">
+	
+	<div class="container">
+		
+		<div class="row">
+			
+			<div class="span3">
+				
+				<div class="account-container">
+				
+					<div class="account-avatar">
+						<img src="./img/headshot.jpg" alt="" class="thumbnail" />
+					</div> <!-- /account-avatar -->
+				
+					<div class="account-details">
+					
+						<span class="account-name">admin</span>
+						
+						<span class="account-role">Administrator</span>
+						
+					
+					</div> <!-- /account-details -->
+				
+				</div> <!-- /account-container -->
+				
+				<hr />
+				
+				<ul id="main-nav" class="nav nav-tabs nav-stacked">
+					
+					<li >
+						<a href="./index.html">
+							<i class="icon-pushpin"></i>
+							标签管理	
+						</a>
+					</li>
+					<li class="active">
+						<a href="./picUpload.html">
+							<i class="icon-th-large"></i>
+							图片管理
+						</a>
+					</li>
+					<li>
+						<a href="./usermanage.html">
+							<i class="icon-user"></i>
+							用户管理		
+						</a>
+					</li>
+					<li>
+						<a href="./exceptionmanage.html">
+							<i class="icon-th-list"></i>
+							异常管理							
+						</a>
+					</li>
+					<li>
+						<a href="./login.html">
+							<i class="icon-off"></i>
+							退出登录
+						</a>
+					</li>
+					
+				</ul>	
+				
+				<hr />
+				<br />
+		
+			</div> <!-- /span3 -->
+			
+			
+			
+			<div class="span9">
+				
+				<h1 class="page-title">
+					<i class="icon-pushpin"></i>
+					图片管理					
+				</h1>
+					
+				
+				<div class="widget widget-table">
+										
+					<div class="widget-header">
+						<i class="icon-th-list"></i>
+						<h3>Upload</h3>
+					</div> <!-- /widget-header -->
+					
+					<div class="widget-content">	
+						<form id="uploadForm" enctype="multipart/form-data">
+							<input id="file"  multiple="true" type="file" name="file"/><br>
+							<button id="upload" type="button" class="btn btn-success " >upload</button>
+						</form>
+					</div> <!-- /widget-content -->
+					
+				</div> <!-- /widget -->
+				
+				<div class="widget widget-table">
+					<div class="widget-header">
+						<i class="icon-th-list"></i>
+						<h3>图片处理情况</h3>
+					</div> <!-- /widget-header -->
+					<div class="widget-content">	
+						<div style="width:600px;margin:0 auto;" id="tableres">
+
+
+	     <table id='myTable2'>
+			<caption>图片处理情况</caption>
+			<thead>
+				<tr>
+					<th></th>
+					<th>已导出标签化图片</th>
+					<th>待导出标签化图片</th>
+					<th>未标签化图片</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th></th>
+					<td id="num1"></td>
+					<td id="num2"></td>
+					<td id="num3"></td>
+					</tr>
+			</tbody>
+		</table>  	
+	</div>	
+	
+					</div> <!-- /widget-content -->
+					
+				</div> <!-- /widget -->
+	
+			</div> <!-- /span9 -->
+			
+			
+		</div> <!-- /row -->
+		
+	</div> <!-- /container -->
+	
+</div> <!-- /content -->
+					
+	
+<div id="footer">
+	
+	<div class="container">				
+		<hr />
+		<!--<p>&copy; 2012 Go Ideate.More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></p>-->
+	</div> <!-- /container -->
+	
+</div> <!-- /footer -->
+
+
+    
+
+<!-- Le javascript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="./js/jquery-1.7.2.min.js"></script>
+<script src="./js/excanvas.min.js"></script>
+<script src="./js/jquery.flot.js"></script>
+<script src="./js/jquery.flot.pie.js"></script>
+<script src="./js/jquery.flot.orderBars.js"></script>
+<script src="./js/jquery.flot.resize.js"></script>
+
+
+<script src="./js/bootstrap.js"></script>
+<script src="./js/charts/bar.js"></script>
+
+ <script src="assets/js/dataTables/jquery.dataTables.js"></script>
+    <script src="assets/js/dataTables/dataTables.bootstrap.js"></script>
+	<script src="./js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#upload").click(function(){
+			var length= $("#file")[0].files.length; 
+			//formdata2.append("file" , $("#file")[0].files[1]);//获取文件法二
+			for(i=0;i<length;i++){  
+				var formdata2=new FormData();   
+                formdata2.append("file" , $("#file")[0].files[i]); 
+				uploadresult(formdata2);
+			} 
+				alert("成功上传"+length+"张图片！");
+				window.location.reload();
+			});
+			function  uploadresult(formdata2){
+			  $.ajax({
+				url: 'http://114.115.133.62:8001/uploadpic/',
+				type: 'POST',
+				cache: false,
+				data: formdata2,
+				processData: false,
+				contentType: false,
+				success:function (returndata) {  
+					//alert("success");
+					var jsonObj = eval('('+returndata+')');
+					//alert(jsonObj[0].ret);
+					},
+				error:function (returndata) {  
+					var jsonObj = eval('('+returndata+')');
+					}
+				});
+			}
+			});
+</script> 
+<script type="text/javascript" src="js/jsapi.js"></script>
+<script type="text/javascript" src="js/corechart.js"></script>		
+<script type="text/javascript" src="js/jquery.gvChart-1.0.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.ba-resize.min.js"></script> 
+<script>
+$(document).ready(function(){
+		var s=' <table id=“myTable1”><caption>图片处理情况</caption><thead><tr><th></th><th>已导出标签化图片</th><th>待导出标签化图片</th><th>未标签化图片</th></tr></thead><tbody>'; 
+		labelSearch();
+		
+	function labelSearch(){
+	$.post("http://114.115.133.62:8001/getpicinfo/",
+    {
+      requestCode:"1" 
+    },
+    function(result,status,xhr){
+		ChartShow(result);
+    },
+	"json");
+	}
+	function ChartShow(result){
+	$("#num1").html(result[0].exportedpic_cnt);
+	$("#num2").html(result[0].confirmedpic_cnt);
+	$("#num3").html(result[0].not_confirmedpic_cnt);
+		gvChartInit();
+		$('#myTable2').gvChart({
+			chartType: 'PieChart',
+			gvSettings: {
+			vAxis: {title: 'No of players'},
+			hAxis: {title: 'Month'},
+			width: 600,
+			height: 350
+		}
+		});
+	}
+	
+});
+</script>
+  </body>
+</html>

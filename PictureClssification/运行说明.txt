@@ -1,0 +1,2 @@
+调用main.m，可以对picture文件夹中的图片进行分类，结果存储在finaltest文件夹中，clucenter为聚类中心的数据表。
+调用singeldeal.m，可以对单张图片进行特征计算，根据最近邻法则返回该图片所属的类别。

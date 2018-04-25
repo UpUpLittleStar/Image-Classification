@@ -1,0 +1,2 @@
+所有函数都写在test.py中，运行main_deal即可，返回文件夹名。
+myData是用MATLAB做的预期聚类中心的值。
